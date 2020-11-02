@@ -1,5 +1,4 @@
-package edu.umb.cs.cs681.hw5;
-
+package edu.umb.cs681.hw5;
 public class RunnablePrimeGenerator extends PrimeGenerator implements Runnable {
 
 	public RunnablePrimeGenerator(long from, long to) {

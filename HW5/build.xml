@@ -37,7 +37,7 @@
 	</target>
 
 	<target name="RunnablePrimeGenerator">
-		<java classname="edu.umb.cs.cs681.hw5.RunnablePrimeGenerator" classpath="bin" failonerror="true" fork="yes" />
+		<java classname="edu.umb.cs681.hw5.RunnablePrimeGenerator" classpath="bin" failonerror="true" fork="yes" />
 	</target>
 
 </project>
