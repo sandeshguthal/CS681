@@ -2,10 +2,7 @@ package edu.umb.cs681.hw7;
 
 import java.util.LinkedList;
 
-//Generates prime factors of a given number (dividend)
-//Prime factors are generated in the range of 2 and dividend
-//from:	lower bound of the range (2)
-//to:		upper bound of the range (dividend)
+
 
 public class PrimeFactorizer {
 	protected long dividend, from, to;
