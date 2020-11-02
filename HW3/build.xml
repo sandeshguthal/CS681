@@ -37,7 +37,7 @@
 	</target>
 
 	<target name="Car">
-		<java classname="edu.umb.cs.cs681.hw3.Car" classpath="bin" failonerror="true" fork="yes" />
+		<java classname="edu.umb.cs681.hw3.Car" classpath="bin" failonerror="true" fork="yes" />
 	</target>
 
 </project>

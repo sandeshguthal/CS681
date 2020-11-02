@@ -1,4 +1,4 @@
-package edu.umb.cs.cs681.hw3;
+package edu.umb.cs681.hw3;
 import java.util.*;
 
 public class Car {

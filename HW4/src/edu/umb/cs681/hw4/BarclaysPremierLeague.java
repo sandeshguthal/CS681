@@ -1,4 +1,4 @@
-package edu.umb.cs.cs681.hw4;
+package edu.umb.cs681.hw4;
 
 import java.util.stream.Collectors;
 

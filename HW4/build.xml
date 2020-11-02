@@ -37,7 +37,7 @@
 	</target>
 
 	<target name="BarclaysPremierLeague">
-		<java classname="edu.umb.cs.cs681.hw4.BarclaysPremierLeague" classpath="bin" failonerror="true" fork="yes" />
+		<java classname="edu.umb.cs681.hw4.BarclaysPremierLeague" classpath="bin" failonerror="true" fork="yes" />
 	</target>
 
 </project>
