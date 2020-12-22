@@ -5,10 +5,22 @@ import java.util.Map;
 import java.nio.file.Path;
 import java.util.concurrent.locks.ReentrantLock;
 
+
 public class AccessCounter {
+	public void increment(Path path) {
+		
+		non_static_lock.lock();
+		try {
+			if (map.get(path) != null)
+				map.put(path, map.get(path) + 1);
+			else 
+				map.put(path, 1);
+		}
+		finally {
+			non_static_lock.unlock();
+		}
+	}
 	
-	private static ReentrantLock staticLock = new ReentrantLock();
-	private static AccessCounter instance = null;
 	private Map<java.nio.file.Path, Integer> map = new HashMap<java.nio.file.Path, Integer>();
     private ReentrantLock non_static_lock = new ReentrantLock();
     
@@ -26,18 +38,8 @@ public class AccessCounter {
 		}
 	}
 	
-	public void increment(Path path) {
-		non_static_lock.lock();
-		try {
-			if (map.get(path) != null)
-				map.put(path, map.get(path) + 1);
-			else 
-				map.put(path, 1);
-		}
-		finally {
-			non_static_lock.unlock();
-		}
-	}
+	private static AccessCounter instance = null;
+
 	
 	public int getCount(Path path) {
 		non_static_lock.lock();
@@ -51,4 +53,6 @@ public class AccessCounter {
 			non_static_lock.unlock();
 		}
 	}	
+	private static ReentrantLock staticLock = new ReentrantLock();
+
 }

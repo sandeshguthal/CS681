@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="HW18" basedir="." default="build">
+
+	<property name="output.dir" value="bin" />
+	<property name="test.output.dir" value="test/bin" />
+	<property name="src.dir" value="src" />
+	<property name="test.src.dir" value="test/src" />
+	<property environment="env" />
+	<property name="junit.output.dir" value="junit" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.8" />
+	<property name="source" value="1.8" />
+	<path id="classpath">
+		<pathelement location="bin" />
+		<pathelement location="test/bin" />
+	</path>
+
+	<target name="clean">
+		<delete dir="${output.dir}" />
+		<delete dir="${test.output.dir}" />
+	</target>
+
+	<target name="init">
+		<mkdir dir="${output.dir}" />
+		<mkdir dir="${test.output.dir}" />
+	</target>
+
+	<target depends="clean" name="cleanall" />
+	<target depends="clean, build-project, Tester" name="build" />
+	<target depends="init" name="build-project">
+		<echo message="${ant.project.name}: ${ant.file}" />
+		<javac debug="true" debuglevel="${debuglevel}" destdir="${output.dir}" includeantruntime="false" source="${source}" target="${target}">
+			<src path="${src.dir}" />
+			<classpath refid="classpath" />
+		</javac>
+
+	</target>
+
+	<target name="Tester">
+		<java classname="edu.umb.cs681.hw18.Tester" classpath="bin" failonerror="true" fork="yes" />
+	</target>
+
+</project>
